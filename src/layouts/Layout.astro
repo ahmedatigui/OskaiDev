@@ -1,5 +1,17 @@
 ---
+
+// Components
+import Header from '../components/Header.astro';
+
+// Styles
+import '../styles/reset.css';
 import '../styles/global.css';
+
+// Fonts
+// Supports weights 100-900
+import '@fontsource-variable/inter';
+import '@fontsource/press-start-2p';
+
 
 interface Props {
 	title: string;
@@ -18,7 +30,12 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+  <body>
+    <main>
+      <Header />
+      <slot />
+    </main>
+
+    <script src="../scripts/box.js"></script>
 	</body>
 </html>

@@ -1,22 +1,27 @@
 ---
-
-
-
-
+const path = Astro.url.pathname;
+const backgroundColor = path === '/' ? '#2a5eff' : '#ffffff';
+const foregroundColor = path === '/' ? '#ffffff' : '#000000';
 ---
 
-
 <header>
-  <div class="header-container">
+  <div class="header-container container">
     <div>
-      <span>Logo</span>
+      <a href="/"><span>{Astro.url.pathname}</span></a>
     </div>
     <nav>
       <ul class="nav-container">
-        <li>Blog</li>
+        <li><a href="/blog">Blog</a></li>
         <li>Theme</li>
       </ul>
     </nav>
   </div>
 </header>
 
+<style define:vars={{backgroundColor, foregroundColor}}>
+  header {
+    background-color: var(--backgroundColor);
+    color: var(--foregroundColor);
+  }
+
+</style>

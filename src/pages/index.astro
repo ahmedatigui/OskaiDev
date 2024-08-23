@@ -1,56 +1,81 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import HeroInteraction from '../components/HeroInteraction.astro';
+
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
+<Layout title="Oskai">
     <section class="hero">
-      <Header />
-      <div class="hero-content">
-  			<h1>Welcome to <span>OskaiDev</span></h1>
+      <div class="container">
+        <div class="hero-content">
+  			  <h1>Oskai is a flexible fullstack developer</h1>
+        </div>
       </div>
+      <HeroInteraction />
 		</section>
-		<section>
+    <section>
+      <div class="container">
 			<h2>Selected Projects</h2>
 			<ul class="projects">
 				<li>
 					<div>
-						<h3>Project 1</h3>
-						<span>visit</span>
+            <h3>(1) Nibble</h3>
+						<a href="https://nibble-two.vercel.app/">visit</a>
 					</div>
 				</li>
 				<li>
 					<div>
-						<h3>Project 2</h3>
-						<span>visit</span>
+						<h3>(2) Ote</h3>
+            <a href="https://ote.vercel.app/">visit</a>
 					</div>
 				</li>
 				<li>
 					<div>
-						<h3>Project 3</h3>
-						<span>visit</span>
+						<h3>(3) Sage</h3>
+            <a href="/">visit</a>
 					</div>
 				</li>
-			</ul>
+        </ul>
+
+      </div>
 		</section>
-		<section>
-      <h2>About me</h2>
+    <section>
+      <div class="container">
 
       <div class="content">
         <div class="info-list">
-          <div>
-            <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+          <div class="tech">
+            <h2>[x] Tech</h2>
+            <div>
+              <ul>
+                <li><span>Typescript</span></li>
+                <li><span>React/Next</span></li>
+                <li><span>Astro</span></li>
+                <li><span>Tailwind</span></li>
+              </ul>
+              <ul>
+                <li><span>Node</span></li> 
+                <li><span>Express/Hapi</span></li> 
+                <li><span>Postgres</span></li>      
+                <li><span>Docker</span></li>   
+              </ul>
+            </div>
           </div>
-          <div>
-            <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+          <div class="contact">
+            <h2>[x] Contact</h2>   
+            <div>           
+              <ul>          
+                <li><a href="https://github.com/ahmedatigui/">Github</a></li> 
+                <li><a href="https://x.com/ahmedatigui">X / Twitter</a></li> 
+                <li><a href="/rss.xml">rss</a></li> 
+              </ul>         
+            </div>          
           </div>
         </div>
         <div class="text">
           <p>Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.</p>
         </div>
       </div>
-
+      </div>
 		</section>
-	</main>
 </Layout>
