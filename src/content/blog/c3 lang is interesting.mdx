@@ -1,0 +1,108 @@
+---
+author: "Oskai"
+title: "C3 is an evolution, not a revolution"
+description: "The C-like for programmers who like C."
+tags:
+  - c3
+  - lang
+  - c3 lang
+publishDate: 2023-03-01
+image:
+  src: https://c3-lang.org/logo.svg
+  alt: C3 lang is interesting
+isDraft: false
+---
+
+- [x] add latex support
+- [x] support rss
+- [x] sitemap
+- [x] setting for theme, font
+- [x] responesiveness
+- [x] favicon
+- [ ] github contribution grid like visual on hero section (shades of blue on canvas api with some animation)
+- [ ] refactor that ugly css and reorganize it
+- [x] separate css for blog post content
+
+# C3 is an evolution, not a revolution: the C-like for programmers who like C.
+
+# H1
+
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+###### H6
+
+C3 is an intriguing evolution of the C programming language, designed to address several of the shortcomings and pain points associated with traditional C, while maintaining a high degree of compatibility and familiarity. Here are some key aspects that make C3 an interesting and cool language:
+
+## C-Like Syntax and ABI Compatibility
+
+C3 retains the syntax and semantics of C as much as possible, making it easy for C programmers to transition. It is fully ABI (Application Binary Interface) compatible with C, allowing seamless integration of C and C3 code in the same project. This compatibility ensures that functions in C3 are callable from C and vice versa, which is a significant advantage for projects that need to mix code from both languages.
+
+## Modern Features
+
+C3 introduces several modern features that enhance the programming experience:
+
+- **Modules**: C3 uses a module-based system for name spacing, which helps in organizing code and reducing namespace conflicts.
+- **Slices**: Similar to those in the D programming language, slices in C3 provide a way to handle arrays with bounds checking, making array operations safer and more efficient.
+- **Semantic Macros**: C3 includes a new semantic macro system that allows for more powerful and flexible metaprogramming compared to the traditional C preprocessor.
+- **Compile-Time Reflection and Execution**: C3 supports enhanced compile-time reflection and execution, enabling more sophisticated compile-time computations and checks.
+
+## Improved Safety and Ergonomics
+
+C3 aims to make C programming more accessible and less error-prone:
+
+- **No Mandatory Header Files**: C3 eliminates the need for header files, simplifying the development process.
+- **Result-Based Error Handling**: C3 introduces a result-based error handling system with zero overhead, making error management more straightforward and efficient.
+- **Less Undefined Behavior**: C3 reduces undefined behavior and adds runtime checks in "safe" mode to ensure more predictable and reliable code execution.
+
+## Generics and Other High-Level Conveniences
+
+C3 includes generics based on generic modules, which allow for more flexible and reusable code. Additionally, features like value methods, associated enum data, and optional pre and post conditions further enhance the language's usability.
+
+## Ease of Transition
+
+C3 is designed to be easy for C programmers to learn and adopt. The language changes are minimal, and existing C code can be lifted into C3 with only a few modifications. This ease of transition is a significant advantage for developers who are already familiar with C.
+
+## Community and Development
+
+The C3 community is actively involved in shaping the language, and the project is open to contributions. The language has reached a feature-stable state with version 0.5, ensuring that developers can confidently use it without worrying about significant changes to the language semantics or standard library.
+
+In summary, C3 is a cool language because it combines the familiarity of C with modern features, improved safety, and enhanced usability, making it an attractive option for systems programming and development projects that require the efficiency and compatibility of C.
+
+[wtf is wut](https://ahmedatigui.com)
+
+- font-monospace-code
+  - What tf is UwU
+- C3 is cool
+
+The Power of Addiction and The Addiction of Power: Gabor Maté at TEDxRio+20
+
+1. Ok --font-monospace-code
+2. Oki --font-monospace-code
+
+Unlike the other props, which are identical to their modern font stack counterparts.
+
+- [ ] Not done
+- [x] What _done_ mean
+
+![C3 lang is interesting](https://c3-lang.org/logo.svg "C3 lang is interesting")
+
+C3 is a programming language that builds on the syntax and semantics of the C language, with the goal of evolving it while still retaining familiarity for C programmers.
+
+Thanks to full ABI compatibility with C, it's possible to mix C and C3 in the same project with no effort.
+As a demonstration, vkQuake was compiled with a small portion of the code converted to C3 and compiled with the c3c compiler.
+
+```cpp
+
+module hello_world;
+import std::io;
+
+fn void main() {
+   io::printn("Hello, world!");
+}
+```

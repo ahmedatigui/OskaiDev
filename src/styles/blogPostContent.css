@@ -1,0 +1,239 @@
+@custom-selector :--text-ele p, a, code, pre, blockquote, li, table, tr, td, th;
+
+.mdx-article {
+  margin: var(--size-3) auto;
+  padding: var(--size-5);
+  border: 4px solid black;
+  background-color: #f8f8f8;
+  box-shadow: 8px 8px 0px rgb(var(--accent-dark));
+  font-family: Arial, sans-serif;
+}
+
+.mdx-article h1,
+.mdx-article h2,
+.mdx-article h3 {
+  color: black;
+  margin-block-start: var(--size-9);
+  border-bottom: 3px solid black;
+  padding-block-end: var(--size-1);
+  font-weight: bold;
+}
+
+.mdx-article h1 {
+  font-size: var(--font-size-6);
+  text-align: start;
+}
+
+.mdx-article h2 {
+  font-size: var(--font-size-5);
+}
+
+.mdx-article h3 {
+  font-size: var(--font-size-4);
+}
+
+.mdx-article h4 {
+  font-size: var(--font-size-3);
+}
+
+.mdx-article h5 {
+  font-size: var(--font-size-2);
+}
+
+.mdx-article h6 {
+  font-size: var(--font-size-1);
+}
+
+.mdx-article p {
+  font-size: var(--font-size-3);
+  line-height: 1.6;
+  color: #222;
+  margin: 1rem 0;
+}
+
+.mdx-article a {
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+  background-color: #e2e2e2;
+  padding: 0 4px;
+  /* transition: color 0.2s, background-color 0.2s; */
+}
+
+.mdx-article a:hover {
+  color: #fff;
+  background-color: rgb(var(--primary-blue));
+}
+
+.mdx-article a:is(:visited:hover) {
+  color: #fff;
+  background-color: rgb(var(--accent-dark));
+}
+
+.mdx-article img {
+  margin: 0 auto;
+}
+
+.mdx-article ul {
+  list-style: none;
+  padding-inline-start: var(--size-5);
+  margin: 1rem 0;
+}
+
+.mdx-article ol {
+  list-style: none;
+  padding-inline-start: var(--size-5);
+  margin: var(--size-3) 0;
+  counter-reset: list-counter;
+}
+
+.mdx-article li {
+  position: relative;
+  padding-inline-start: var(--size-5);
+  margin: var(--size-2) 0;
+  color: #333;
+}
+
+.mdx-article ul li:not(:has(> input[type="checkbox"]:only-child))::before {
+  content: "■";
+  color: black;
+  position: absolute;
+  left: 0;
+  font-size: var(--font-size-1);
+}
+
+.mdx-article ol li {
+  counter-increment: list-counter;
+}
+
+.mdx-article ol li::before {
+  content: counter(list-counter) ". ";
+  color: black;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.mdx-article ul ul,
+.mdx-article ol ol {
+  padding-inline-start: var(--size-5);
+  border-left: none;
+}
+
+.mdx-article ul ul li::before,
+.mdx-article ol ol li::before {
+  color: #666;
+}
+
+.mdx-article ul li:has(> input[type="checkbox"]:only-child) {
+  padding: 0;
+}
+
+.mdx-article li input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid black;
+  background-color: white;
+  margin-inline-end: 0.75rem;
+  display: inline-block;
+  vertical-align: middle;
+  box-shadow: 2px 2px 0px #333;
+  position: relative;
+  outline: none;
+}
+
+.mdx-article li input[type="checkbox"]:checked {
+  background-color: black;
+  color: white;
+}
+
+.mdx-article li input[type="checkbox"]:checked::before {
+  content: "✔";
+  color: white;
+  font-size: var(--font-size-1);
+  display: block;
+  text-align: center;
+  line-height: 1.2rem;
+}
+
+.mdx-article li .checkbox-text {
+  font-size: 1rem;
+  color: #222;
+}
+
+.mdx-article blockquote {
+  border-left: 4px solid black;
+  padding-left: 1rem;
+  color: #555;
+  font-style: italic;
+  background-color: #e8e8e8;
+  margin: 1rem 0;
+}
+
+.mdx-article pre {
+  background-color: #222;
+  color: #e1e4e8;
+  padding: 1rem;
+  border: 4px solid black;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  box-shadow: 6px 6px 0px #333;
+}
+
+.mdx-article code {
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.mdx-article hr {
+  border: none;
+  border-block-start: 4px solid black;
+  margin: var(--size-7) 0;
+}
+
+@media screen and (max-width: 400px) {
+  .mdx-article h1 {
+    font-size: var(--font-size-4);
+    text-align: start;
+  }
+
+  .mdx-article h2 {
+    font-size: var(--font-size-3);
+  }
+
+  .mdx-article h3 {
+    font-size: var(--font-size-2);
+  }
+
+  .mdx-article h4 {
+    font-size: var(--font-size-1);
+  }
+
+  :text-ele {
+    font-size: var(--font-size-00);
+  }
+}
+
+@media screen and (max-width: 600px) and (min-width: 400px) {
+  .mdx-article h1 {
+    font-size: var(--font-size-4);
+    text-align: start;
+  }
+
+  .mdx-article h2 {
+    font-size: var(--font-size-3);
+  }
+
+  .mdx-article h3 {
+    font-size: var(--font-size-2);
+  }
+
+  .mdx-article h4 {
+    font-size: var(--font-size-1);
+  }
+
+  :text-ele {
+    font-size: var(--font-size-00);
+  }
+}

@@ -1,9 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BlogLayout from "../layouts/BlogLayout.astro";
+import BlogList from "../components/BlogList.astro";
+import "../styles/blog.css";
 ---
-<Layout title="Blog">
-  <section>
-    <h1>Blog</h1>
-    <p>Coming soon</p>
-  </section>
-</Layout> 
+
+<BlogLayout title="Blog">
+  <main>
+    <section class="blogs-container container">
+      <h1>Blog</h1>
+      <BlogList />
+    </section>
+  </main>
+</BlogLayout>

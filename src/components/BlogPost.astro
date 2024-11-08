@@ -1,0 +1,31 @@
+---
+import "../styles/blog.css";
+
+const { post } = Astro.props;
+
+const hasImage = post.data.image?.src;
+---
+
+<li class="post-item">
+  <a href={`/posts/${post.slug}/`} class="post-link">
+    <div class="post-content">
+      <h2>{post.data.title}</h2>
+      <date class="post-date">{post.data.publishDate.toDateString()}</date>
+      <p class="post-description">{post.data.description}</p>
+    </div>
+    <div class="image-container">
+      {
+        hasImage ? (
+          <img
+            src={`${post.data.image.src}`}
+            alt={`${post.data.image.alt || "Placeholder image"}`}
+            title={`${post.data.image.alt || "Placeholder"}`}
+            class="post-image"
+          />
+        ) : (
+          <p class="placeholder-text">No Image</p>
+        )
+      }
+    </div>
+  </a>
+</li>

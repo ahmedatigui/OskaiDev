@@ -1,0 +1,10 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/blog.css";
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <slot />
+</BaseLayout>

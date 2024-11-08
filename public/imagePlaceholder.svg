@@ -1,0 +1,17 @@
+	 <svg 
+      class="placeholder-svg"
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 150 150" 
+      role="img" 
+      aria-labelledby="no-image-title no-image-desc"
+    >
+     <style>
+     .text { font: 12pt Press Start 2P, Inter Variable, sans-serif; fill: black; font-weight: bold; }
+      </style>
+      <title id="no-image-title">No Image Available</title>
+      <desc id="no-image-desc">A placeholder indicating no image is available</desc>
+      <rect width="150" height="150" fill="#e2e2e2" />
+      <text x="50%" y="50%" class="text" text-anchor="middle" dy=".3em">
+        No Image
+      </text>
+    </svg>

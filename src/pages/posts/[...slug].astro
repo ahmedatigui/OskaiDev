@@ -1,0 +1,40 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import "../../styles/blogPostContent.css";
+
+export async function getStaticPaths() {
+  const posts: CollectionEntry<"blog">[] = await getCollection(
+    "blog",
+    ({ data }: { data: CollectionEntry<"blog"> }) => {
+      return import.meta.env.PROD ? data.isDraft !== true : true;
+    },
+  );
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+const theme = post.data.theme;
+const background = theme?.background ?? "rgb(var(--primary-blue))";
+const shadow = theme?.shadow ?? "rgb(var(--accent-dark))";
+---
+
+<BlogLayout title={post.data.title}>
+  <main>
+    <article class="container mdx-article">
+      <Content />
+    </article>
+  </main>
+  <style define:vars={{ background, shadow }}>
+    main {
+      background-color: var(--background, rgb(var(--primary-blue)));
+    }
+    .mdx-article {
+      box-shadow: 8px 8px 0px var(--shadow, rgb(var(--accent-dark)));
+    }
+  </style>
+</BlogLayout>

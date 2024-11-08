@@ -1,6 +1,6 @@
 function generateBox() {
-  const boxContainer = document.querySelector('.box-container');
-  const hero = document.querySelector('.hero');
+  const boxContainer = document.querySelector(".box-container");
+  const hero = document.querySelector(".hero");
 
   const screenWidth = hero.clientWidth;
   const screenHeight = hero.clientHeight;
@@ -12,19 +12,19 @@ function generateBox() {
   console.log(boxWidthNum, boxHeightNum);
 
   for (let i = 0; i < numberOfBoxes; ++i) {
-    const boxCol = document.createElement('div');
-    boxCol.classList.add('box-col');
+    const boxCol = document.createElement("div");
+    boxCol.classList.add("box-col");
 
     for (let j = 0; j < numberOfBoxes; ++j) {
-      const box = document.createElement('div');
-      box.classList.add('box');
+      const box = document.createElement("div");
+      box.classList.add("box");
       box.style.width = `${boxWidthNum}px`;
       box.style.height = `${boxWidthNum}px`;
 
-      box.addEventListener('mouseover', () => {
-        box.style.backgroundColor = '#00ff0b';
+      box.addEventListener("mouseover", () => {
+        box.style.backgroundColor = "#00ff0b";
         setTimeout(() => {
-          box.style.backgroundColor = 'transparent';
+          box.style.backgroundColor = "transparent";
         }, 300);
       });
 
@@ -36,15 +36,15 @@ function generateBox() {
 }
 
 function removeBoxes() {
-  const boxContainer = document.querySelector('.box-container');
+  const boxContainer = document.querySelector(".box-container");
   if (boxContainer) {
     boxContainer.remove();
   }
 }
 
-window.addEventListener('load', () =>
-  window.innerWidth >= 800 ? generateBox() : null
+window.addEventListener("load", () =>
+  window.innerWidth >= 800 ? generateBox() : null,
 );
-window.addEventListener('resize', () =>
-  window.innerWidth < 800 ? removeBoxes() : null
+window.addEventListener("resize", () =>
+  window.innerWidth < 800 ? removeBoxes() : null,
 );
