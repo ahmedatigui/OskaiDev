@@ -6,8 +6,8 @@ import "../../styles/blogPostContent.css";
 export async function getStaticPaths() {
   const posts: CollectionEntry<"blog">[] = await getCollection(
     "blog",
-    ({ data }: { data: CollectionEntry<"blog"> }) => {
-      return import.meta.env.PROD ? data.isDraft !== true : true;
+    ({ data }: { data: any }) => {
+      return import.meta.env.PROD ? data.data.isDraft !== true : true;
     },
   );
   return posts.map((post) => ({
