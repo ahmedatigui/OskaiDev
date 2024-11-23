@@ -1,6 +1,12 @@
 function generateBox() {
-  const boxContainer = document.querySelector(".box-container");
+  let boxContainer = document.querySelector(".box-container");
   const hero = document.querySelector(".hero");
+
+  if(!boxContainer) {
+    boxContainer = document.createElement("div");
+    boxContainer.classList.add("box-container");
+    hero.appendChild(boxContainer);
+  }
 
   const screenWidth = hero.clientWidth;
   const screenHeight = hero.clientHeight;
@@ -20,11 +26,12 @@ function generateBox() {
       box.classList.add("box");
       box.style.width = `${boxWidthNum}px`;
       box.style.height = `${boxWidthNum}px`;
+      box.style.background = "transparent";
 
       box.addEventListener("mouseover", () => {
-        box.style.backgroundColor = "#00ff0b";
+        box.style.background = "repeating-radial-gradient(circle at 0 0, #eee, #ccc 50px)";
         setTimeout(() => {
-          box.style.backgroundColor = "transparent";
+          box.style.background = "transparent";
         }, 300);
       });
 
@@ -45,6 +52,10 @@ function removeBoxes() {
 window.addEventListener("load", () =>
   window.innerWidth >= 800 ? generateBox() : null,
 );
-window.addEventListener("resize", () =>
-  window.innerWidth < 800 ? removeBoxes() : null,
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 800) {
+    removeBoxes();
+    generateBox();
+  }
+}
 );
